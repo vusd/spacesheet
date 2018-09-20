@@ -1,0 +1,41 @@
+{
+  "name": "spacesheet-demo",
+  "version": "1.0.0",
+  "description": "Placeholder for spacesheet information.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "./node_modules/.bin/webpack",
+    "build:prod": "./node_modules/.bin/webpack -p",
+    "watch": "./node_modules/.bin/webpack --watch",
+    "dev": "./node_modules/.bin/webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vusd/spacesheet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vusd/spacesheet/issues"
+  },
+  "homepage": "https://github.com/vusd/spacesheet#readme",
+  "devDependencies": {
+    "babel-core": "~6.26.0",
+    "babel-loader": "~7.1.2",
+    "babel-preset-env": "~1.6.0",
+    "clean-webpack-plugin": "~0.1.17",
+    "css-loader": "~0.28.7",
+    "extract-text-webpack-plugin": "~3.0.0",
+    "file-loader": "~1.1.4",
+    "html-loader": "~0.5.1",
+    "html-webpack-plugin": "~2.30.1",
+    "node-sass": "~4.5.3",
+    "sass-loader": "~6.0.6",
+    "style-loader": "~0.18.2",
+    "webpack": "~3.6.0",
+    "webpack-dev-server": "~2.9.1"
+  }
+}
