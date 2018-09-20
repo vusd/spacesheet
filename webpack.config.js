@@ -18,7 +18,7 @@ const config = {
 
   output: {
     // absolute path declaration
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     filename: './assets/js/[name].bundle.js'
   },
 
@@ -60,8 +60,8 @@ const config = {
   },
 
   plugins: [
-    // cleaning up only 'dist' folder
-    new CleanWebpackPlugin(['dist']),
+    // cleaning up only 'docs' folder
+    new CleanWebpackPlugin(['docs']),
     new HtmlWebpackPlugin({
       template: 'index.html'
     }),
@@ -71,7 +71,7 @@ const config = {
 
   devServer: {
     // static files served from here
-    contentBase: path.resolve(__dirname, "./dist/assets/media"),
+    contentBase: path.resolve(__dirname, "./docs/assets/media"),
     compress: true,
     // open app in localhost:2000
     port: 2000,
