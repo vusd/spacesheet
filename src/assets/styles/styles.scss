@@ -6,6 +6,14 @@ html, body
     font-family: 'Open Sans', sans-serif;
 }
 
+
+.full-width-container {
+  width: 80%;
+  max-width: 80%;
+  clear: both;
+  margin: 0 auto;
+}
+
 .container
 {
     padding-left:16px;

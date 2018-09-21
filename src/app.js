@@ -1,5 +1,9 @@
-import './assets/scss/normalize.scss';
-import './assets/scss/skeleton.scss';
-import './assets/scss/styles.scss';
+import './assets/styles/normalize.css';
+import './assets/styles/skeleton.css';
+
+import 'video.js/dist/video-js.css';
+import 'videojs-playlist-ui/dist/videojs-playlist-ui.css';
+
+import './assets/styles/styles.scss';
 
 import './assets/js/index.js';
