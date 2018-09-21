@@ -29,10 +29,15 @@ const config = {
       { test: /\.js$/, include: /src/, exclude: /node_modules/, use: { loader: "babel-loader", options: { presets: ['env'] } } },
       // html-loader
       { test: /\.html$/, use: ['html-loader'] },
+
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
       // sass-loader with sourceMap activated
       {
         test: /\.scss$/,
-        include: [path.resolve(__dirname, 'src', 'assets', 'scss')],
+        include: [path.resolve(__dirname, 'src', 'assets', 'styles')],
         use: extractPlugin.extract({
           use: [
             {
@@ -52,7 +57,7 @@ const config = {
         })
       },
       // file-loader(for images)
-      { test: /\.(jpg|png|gif|svg)$/, use: [ { loader: 'file-loader', options: { name: '[name].[ext]', outputPath: './assets/media/' } } ] },
+      { test: /\.(jpg|png|gif|svg|mp4)$/, use: [ { loader: 'file-loader', options: { name: '[name].[ext]', outputPath: './assets/media/' } } ] },
       // file-loader(for fonts)
       { test: /\.(woff|woff2|eot|ttf|otf)$/, use: ['file-loader'] }
 
