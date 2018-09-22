@@ -1,0 +1,21 @@
+.video-player {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  .columns {
+    position: relative;
+    &.nine {
+      background: black;
+      align-items: center;
+      .video-js {
+        height: 100%;
+        width: 100%;
+        min-height: 400px;
+      }
+    }
+    &.three {
+      overflow: auto;
+    }
+  }
+}

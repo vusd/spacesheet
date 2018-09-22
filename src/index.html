@@ -16,27 +16,41 @@
     </div>
 
     <div class="full-width-container">
-      <div class="nine columns">
-        <video
+      <div class="video-player">
+        <div class="nine columns">
+          <video
             id="player"
-            class="video-js"
+            class="video-js vjs-big-play-centered"
             controls
             preload="auto"
           >
-          <p class="vjs-no-js">
-            To view this video please enable JavaScript, and consider upgrading to a
-            web browser that
-            <a href="http://videojs.com/html5-video-support/" target="_blank">
-              supports HTML5 video
-            </a>
-          </p>
-        </video>
-      </div>
-      <div class="three columns">
-        <div class="vjs-playlist"></div>
+            <p class="vjs-no-js">
+              To view this video please enable JavaScript, and consider upgrading to a
+              web browser that
+              <a href="http://videojs.com/html5-video-support/" target="_blank">
+                supports HTML5 video
+              </a>
+            </p>
+          </video>
+        </div>
+        <div class="three columns">
+          <div class="playlist-container">
+            <div class="vjs-playlist "></div>
+          </div>
+        </div>
       </div>
     </div>
 
+
+    <!-- <section class="main-preview-player">
+      <video id="preview-player" class="video-js vjs-fluid" controls preload="auto" crossorigin="anonymous">
+        <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+      </video>
+
+      <div class="playlist-container  preview-player-dimensions vjs-fluid">
+        <ol class="vjs-playlist"></ol>
+      </div>
+    </section> -->
 
     <!-- Old design -->
     <!-- <div class='container'>

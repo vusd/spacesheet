@@ -5,5 +5,6 @@ import 'video.js/dist/video-js.css';
 import 'videojs-playlist-ui/dist/videojs-playlist-ui.css';
 
 import './assets/styles/styles.scss';
+import './assets/styles/video-player.scss';
 
 import './assets/js/index.js';

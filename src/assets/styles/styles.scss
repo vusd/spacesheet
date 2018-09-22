@@ -8,11 +8,13 @@ html, body
 
 
 .full-width-container {
-  width: 80%;
-  max-width: 80%;
-  clear: both;
+  position: relative;
+  width: 90%;
+  max-width: 90%;
   margin: 0 auto;
+  box-sizing: border-box;
 }
+
 
 .container
 {
