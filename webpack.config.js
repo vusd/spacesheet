@@ -59,7 +59,8 @@ const config = {
       // file-loader(for images)
       { test: /\.(jpg|png|gif|svg|mp4)$/, use: [ { loader: 'file-loader', options: { name: '[name].[ext]', outputPath: './assets/media/' } } ] },
       // file-loader(for fonts)
-      { test: /\.(woff|woff2|eot|ttf|otf)$/, use: ['file-loader'] }
+      { test: /\.(woff|woff2|eot|ttf|otf)$/, use: [ { loader: 'file-loader', options: { name: '[name].[ext]', outputPath: './assets/fonts/' } }] }
+
 
     ]
   },
@@ -76,7 +77,7 @@ const config = {
 
   devServer: {
     // static files served from here
-    contentBase: path.resolve(__dirname, "./docs/assets/media"),
+    contentBase: path.resolve(__dirname, "./docs"),
     compress: true,
     // open app in localhost:2000
     port: 2000,

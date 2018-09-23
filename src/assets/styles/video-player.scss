@@ -1,7 +1,12 @@
 .video-player {
+  @media (min-width: 1000px) {
+    width: 80%;
+    max-width: 1900px;
+  }
+  width : 100%;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  max-height: 500px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   .columns {
     position: relative;

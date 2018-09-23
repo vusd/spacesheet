@@ -9,8 +9,10 @@ import '../media/videos/3-grid-lerp.mp4';
 import '../media/videos/4-random.mp4';
 import '../media/videos/5-slider.mp4';
 
+// Import posters
+import '../media/videos/posters/poster.png';
+
 const player = videojs(document.getElementById('player'), {
-  fluid: true,
   autoplay: true,
 });
 
@@ -20,7 +22,8 @@ player.playlist([
       src: './assets/media/1-overview.mp4',
       type: 'video/mp4',
     }],
-    poster: '',
+    poster: './assets/media/poster.png',
+    thumbnail: './assets/media/poster.png',
     name: 'Overview',
   },
   {

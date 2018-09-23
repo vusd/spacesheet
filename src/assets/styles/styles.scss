@@ -1,20 +1,22 @@
-html, body
-{   width: 100%;
-    height: 100%;
-    padding: 0px;
-    margin: 0px;
-    font-family: 'Open Sans', sans-serif;
+* {
+  font-family: 'Rubik', sans-serif;
 }
 
+html, body
+{
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
 
 .full-width-container {
   position: relative;
-  width: 90%;
-  max-width: 90%;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
 }
-
 
 .container
 {
@@ -24,61 +26,6 @@ html, body
 
 .container p
 {
-    font-size: 1.6rem;
+    // font-size: 1.6rem;
     color:#555;
 }
-
-.title
-{   font-size:5.5rem;
-    font-weight: bold;
-    color:#333;
-}
-
-.subtitle
-{   color:#333;
-}
-
-.header
-{   margin-top:7rem;
-    margin-bottom:7rem;
-    height:100%;
-}
-
-a
-{   color:black;
-    font-weight:bold;
-}
-
-.footer
-{
-    height:100px;
-}
-
-.left
-{
-    float: left;
-}
-
-.right
-{
-    float: right;
-}
-
-.iframe-container {
-  margin-bottom: 2em;
-}
-.iframe-parent {
-  overflow: hidden;
-  padding-top: 56.25%;
-  position: relative;
-  display: flex;
-}
-
-  .iframe-parent iframe {
-    border: 0;
-    left: 0;
-    position: absolute;
-    top: 0;
-    transform: scale(0.5);
-    transform-origin: 0 0;
-  }
