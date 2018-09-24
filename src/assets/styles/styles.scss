@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 * {
   font-family: 'Rubik', sans-serif;
 }
@@ -9,6 +11,93 @@ html, body
   padding: 0px;
   margin: 0px;
 }
+.section:not(.hero) .section:not(.footer) {
+  h1, h2, h3, h4, h5, h6, p {
+    color: $darkgrey;
+  }
+}
+
+body {
+  background: $lightgrey;
+  > .section {
+    h2 {
+      text-align: center;
+    }
+    &.hero {
+      color: $white;
+      margin-bottom: $spacingExtraLarge;
+      background: $darkgrey;
+      padding: $spacingExtraLarge 0 ($spacingExtraLarge + $spacingLarge) 0;
+    }
+    &.video {
+      margin-bottom: $spacingExtraLarge;
+      .video-player {
+        margin: -15rem auto 0 auto;
+      }
+    }
+    &.abstract {
+      margin-bottom: $spacingExtraLarge;
+      button {
+        width: 100%;
+      }
+      @media (min-width: 550px) {
+        button {
+          width: 80%;
+        }
+      }
+      p {
+        margin-bottom: $spacingLarge;
+      }
+    }
+    &.demo {
+      background: $white;
+      margin-bottom: 0;
+      padding: $spacingExtraLarge 0;
+      p {
+        text-align: center;
+        margin-bottom: $spacingLarge;
+      }
+      .columns {
+        .demo-tile {
+          cursor: pointer;
+          border: 2px solid $darkgrey;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 15rem;
+          margin-bottom: $spacingMedium;
+          > * {
+            margin: 0;
+          }
+        }
+        @media (min-width: 550px) {
+          &:first-child {
+            .demo-tile {
+              margin-right: $spacingSmall;
+              &:first-child {
+                margin-bottom: $spacingSmall * 2;
+              }
+            }
+          }
+          &:last-child {
+            .demo-tile {
+              margin-left: $spacingSmall;
+              &:first-child {
+                margin-bottom: $spacingSmall * 2;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.footer {
+      background: $darkgrey;
+      color: $white;
+      margin: 0;
+      padding: $spacingLarge 0;
+    }
+  }
+}
 
 .full-width-container {
   position: relative;
@@ -18,14 +107,27 @@ html, body
   box-sizing: border-box;
 }
 
-.container
-{
-    padding-left:16px;
-    padding-right:16px;
+.container {
+  padding-left: $spacingExtraLarge;
+  padding-right: $spacingExtraLarge;
 }
 
-.container p
-{
-    // font-size: 1.6rem;
-    color:#555;
+.align-center {
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: $spacingExtraSmall $spacingMedium;
+  &.btn-primary {
+    background: $darkgrey;
+    color: $white;
+    border: 2px solid $darkgrey;
+  }
+  &.btn-secondary {
+    background: transparent;
+    color: $darkgrey;
+    border: 2px solid $darkgrey;
+  }
 }
