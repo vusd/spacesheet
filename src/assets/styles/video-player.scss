@@ -3,8 +3,11 @@
 .video-player {
   @media (min-width: 1000px) {
     width: 60%;
-    min-width: 950px;
-    max-width: 1900px;
+    min-width: 1000px;
+    max-width: 1200px;
+    width: 80vw;
+    height: 36vw;
+    max-height: 500px;
   }
   width : 100%;
   display: flex;
@@ -20,10 +23,64 @@
         height: 100%;
         width: 100%;
         min-height: 400px;
+        @media (min-width: 550px) {
+          min-height: initial;
+        }
       }
     }
-    &.three {
+    &.playlist-container {
       overflow: auto;
+      display: flex;
+      .vjs-playlist {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 8px;
+        border-left: 1px solid $darkgrey;
+        background: $darkergrey;
+
+        .vjs-playlist-item-list {
+          .vjs-playlist-item {
+            height: initial;
+            &:not(:last-child) {
+              margin-bottom: 8px;
+            }
+            .vjs-playlist-thumbnail-placeholder {
+              display: flex;
+              border-radius: 2px;
+              height: 70px;
+              .vjs-playlist-title-container {
+                height: 100%;
+                position: relative;
+                > * {
+                  height: 100%;
+                  position: absolute;
+                }
+              }
+              .vjs-playlist-now-playing-text {
+                position: absolute;
+                height: auto;
+                text-transform: uppercase;
+                font-size: 0.8em;
+              }
+              .vjs-playlist-name {
+                bottom: 3px;
+                display: flex;
+                align-items: flex-end;
+              }
+
+              border: 1px solid $darkgrey;
+              picture {
+                img {
+                  height: 100%;
+                  max-width: 200px;
+                  opacity: 0.5;
+                }
+              }
+              max-height: 100px;
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -11,7 +11,7 @@ html, body
   padding: 0px;
   margin: 0px;
 }
-.section:not(.hero) .section:not(.footer) {
+.section:not(.hero) .section:not(.contact) {
   h1, h2, h3, h4, h5, h6, p {
     color: $darkgrey;
   }
@@ -90,11 +90,15 @@ body {
         }
       }
     }
-    &.footer {
+    &.contact {
       background: $darkgrey;
       color: $white;
       margin: 0;
-      padding: $spacingLarge 0;
+      padding: $spacingExtraLarge 0;
+      text-align: center;
+      h2 {
+        margin-bottom: $spacingLarge;
+      }
     }
   }
 }

@@ -23,7 +23,7 @@ player.playlist([
       type: 'video/mp4',
     }],
     poster: './assets/media/poster.png',
-    thumbnail: './assets/media/poster.png',
+    // thumbnail: './assets/media/poster.png',
     name: 'Overview',
   },
   {
