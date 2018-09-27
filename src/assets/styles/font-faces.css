@@ -3,3 +3,13 @@
   src: url(./fonts/Rubik-Regular.ttf);
   font-weight: normal;
 }
+@font-face {
+  font-family: 'Space Mono';
+  src: url(./fonts/SpaceMono-Regular.ttf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Space Mono';
+  src: url(./fonts/SpaceMono-Bold.ttf);
+  font-weight: 700;
+}

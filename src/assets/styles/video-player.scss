@@ -13,42 +13,49 @@
   display: flex;
   flex-wrap: wrap;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-  outline: 1px solid $darkergrey;
   .columns {
     position: relative;
     &.nine {
-      background: black;
       align-items: center;
       .video-js {
         height: 100%;
         width: 100%;
         min-height: 400px;
-        @media (min-width: 550px) {
+        @media (min-width: 750px) {
           min-height: initial;
         }
       }
     }
     &.playlist-container {
+      @media (max-width: 749px) {
+        max-height: 300px;
+      }
       overflow: auto;
       display: flex;
       .vjs-playlist {
+        border-left: 1px solid grey;
         box-sizing: border-box;
         width: 100%;
-        padding: 8px;
-        border-left: 1px solid $darkgrey;
-        background: $darkergrey;
-
+        background: $lightgrey;
+        .vjs-selected {
+          box-shadow: 1px 0px 6px $darkgrey;
+          z-index: 1;
+          border: none;
+        }
         .vjs-playlist-item-list {
           .vjs-playlist-item {
             height: initial;
-            &:not(:last-child) {
-              margin-bottom: 8px;
-            }
+            color: $darkgrey;
+            margin: 0;
+            border-bottom: 1px solid grey;
             .vjs-playlist-thumbnail-placeholder {
               display: flex;
               border-radius: 2px;
               height: 70px;
               .vjs-playlist-title-container {
+                border: none;
+                background: $lightgrey;
+                text-shadow: none;
                 height: 100%;
                 position: relative;
                 > * {
@@ -57,6 +64,7 @@
                 }
               }
               .vjs-playlist-now-playing-text {
+                z-index: 1;
                 position: absolute;
                 height: auto;
                 text-transform: uppercase;
@@ -67,8 +75,6 @@
                 display: flex;
                 align-items: flex-end;
               }
-
-              border: 1px solid $darkgrey;
               picture {
                 img {
                   height: 100%;

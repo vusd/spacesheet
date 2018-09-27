@@ -10,95 +10,125 @@ html, body
   height: 100%;
   padding: 0px;
   margin: 0px;
+  background: $lightgrey;
 }
-.section:not(.hero) .section:not(.contact) {
-  h1, h2, h3, h4, h5, h6, p {
-    color: $darkgrey;
+
+
+.section {
+  color: $darkgrey;
+  h1, h2, h3, h4, h5, h6, button {
+    font-family: 'Space Mono', monospace;
+    &:not(button) {
+      font-weight: bold;
+    }
+  }
+  &.hero, &.contact {
+    h1, h2, h3, h4, h5, h6, p {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 300;
+      color: $white;
+    }
   }
 }
 
-body {
-  background: $lightgrey;
-  > .section {
-    h2 {
-      text-align: center;
-    }
-    &.hero {
-      color: $white;
-      margin-bottom: $spacingExtraLarge;
-      background: $darkgrey;
-      padding: $spacingExtraLarge 0 ($spacingExtraLarge + $spacingLarge) 0;
-    }
-    &.video {
-      margin-bottom: $spacingExtraLarge;
-      .video-player {
-        margin: -15rem auto 0 auto;
+.section {
+  h2 {
+    text-align: center;
+  }
+  &.hero {
+    color: $white;
+    margin-bottom: $spacingExtraLarge;
+    background-color: #0a0a0a;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23505050' fill-opacity='1'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+    padding: $spacingExtraLarge 0 ($spacingExtraLarge + $spacingLarge) 0;
+    .logo {
+      height: 60px;
+      margin-bottom: $spacingMedium;
+      img {
+        @media (max-width: 749px) {
+        }
+        max-height: 100%;
+        max-width: 100%;
       }
     }
-    &.abstract {
-      margin-bottom: $spacingExtraLarge;
+  }
+  &.video {
+    @media (max-width: 749px) { // playlist ui wraps
+      .column, .columns {
+        width:100%;
+      }
+    }
+    margin-bottom: $spacingExtraLarge;
+    .video-player {
+      margin: -15rem auto 0 auto;
+    }
+  }
+  &.abstract {
+    margin-bottom: $spacingExtraLarge;
+    button {
+      font-size: 1.8rem;
+      width: 100%;
+      margin-bottom: 2.4rem;
+    }
+    @media (min-width: 550px) {
       button {
-        width: 100%;
+        width: 80%;
+      }
+    }
+    p {
+      margin-bottom: $spacingLarge;
+    }
+  }
+  &.demo {
+    background: $white;
+    margin-bottom: 0;
+    padding: $spacingExtraLarge 0;
+    p {
+      text-align: center;
+      margin-bottom: $spacingLarge;
+    }
+    .columns {
+      .demo-tile {
+        cursor: pointer;
+        border: 2px solid $darkgrey;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 15rem;
+        margin-bottom: $spacingMedium;
+        > * {
+          margin: 0;
+        }
       }
       @media (min-width: 550px) {
-        button {
-          width: 80%;
-        }
-      }
-      p {
-        margin-bottom: $spacingLarge;
-      }
-    }
-    &.demo {
-      background: $white;
-      margin-bottom: 0;
-      padding: $spacingExtraLarge 0;
-      p {
-        text-align: center;
-        margin-bottom: $spacingLarge;
-      }
-      .columns {
-        .demo-tile {
-          cursor: pointer;
-          border: 2px solid $darkgrey;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          height: 15rem;
-          margin-bottom: $spacingMedium;
-          > * {
-            margin: 0;
-          }
-        }
-        @media (min-width: 550px) {
-          &:first-child {
-            .demo-tile {
-              margin-right: $spacingSmall;
-              &:first-child {
-                margin-bottom: $spacingSmall * 2;
-              }
+        &:first-child {
+          .demo-tile {
+            margin-right: $spacingSmall;
+            &:first-child {
+              margin-bottom: $spacingSmall * 2;
             }
           }
-          &:last-child {
-            .demo-tile {
-              margin-left: $spacingSmall;
-              &:first-child {
-                margin-bottom: $spacingSmall * 2;
-              }
+        }
+        &:last-child {
+          .demo-tile {
+            margin-left: $spacingSmall;
+            &:first-child {
+              margin-bottom: $spacingSmall * 2;
             }
           }
         }
       }
     }
-    &.contact {
-      background: $darkgrey;
-      color: $white;
-      margin: 0;
-      padding: $spacingExtraLarge 0;
-      text-align: center;
-      h2 {
-        margin-bottom: $spacingLarge;
-      }
+  }
+  &.contact {
+    background: $darkergrey;
+    color: $white;
+    margin: 0;
+    padding: $spacingExtraLarge 0;
+    text-align: center;
+    h2 {
+      margin-bottom: $spacingLarge;
     }
   }
 }
