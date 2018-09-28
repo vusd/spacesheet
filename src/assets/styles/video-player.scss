@@ -1,7 +1,8 @@
 @import './variables.scss';
 
 .video-player {
-  @media (min-width: 1000px) {
+  @media (min-width: 1000px)
+  {
     width: 60%;
     min-width: 1000px;
     max-width: 1200px;
@@ -12,71 +13,88 @@
   width : 100%;
   display: flex;
   flex-wrap: wrap;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-  .columns {
+
+  .columns
+  {
     position: relative;
-    &.nine {
+    &.nine
+    {
       align-items: center;
-      .video-js {
+      .video-js
+      {
         height: 100%;
         width: 100%;
         min-height: 400px;
-        @media (min-width: 750px) {
+        @media (min-width: 750px)
+        {
           min-height: initial;
         }
       }
     }
-    &.playlist-container {
-      @media (max-width: 749px) {
-        max-height: 300px;
+    &.playlist-container
+    {
+      @media (max-width: 749px)
+      {
+        max-height: 200px;
       }
       overflow: auto;
       display: flex;
-      .vjs-playlist {
+      .vjs-playlist
+      {
         border-left: 1px solid grey;
         box-sizing: border-box;
         width: 100%;
         background: $lightgrey;
-        .vjs-selected {
+        .vjs-selected
+        {
           box-shadow: 1px 0px 6px $darkgrey;
           z-index: 1;
           border: none;
         }
-        .vjs-playlist-item-list {
-          .vjs-playlist-item {
+        .vjs-playlist-item-list
+        {
+          .vjs-playlist-item
+          {
             height: initial;
             color: $darkgrey;
             margin: 0;
             border-bottom: 1px solid grey;
-            .vjs-playlist-thumbnail-placeholder {
+            .vjs-playlist-thumbnail-placeholder
+            {
               display: flex;
               border-radius: 2px;
               height: 70px;
-              .vjs-playlist-title-container {
+              .vjs-playlist-title-container
+              {
                 border: none;
                 background: $lightgrey;
                 text-shadow: none;
                 height: 100%;
                 position: relative;
-                > * {
+                > *
+                {
                   height: 100%;
                   position: absolute;
                 }
               }
-              .vjs-playlist-now-playing-text {
+              .vjs-playlist-now-playing-text
+              {
                 z-index: 1;
                 position: absolute;
                 height: auto;
                 text-transform: uppercase;
                 font-size: 0.8em;
               }
-              .vjs-playlist-name {
+              .vjs-playlist-name
+              {
                 bottom: 3px;
                 display: flex;
                 align-items: flex-end;
               }
-              picture {
-                img {
+              picture
+              {
+                img
+                {
                   height: 100%;
                   max-width: 200px;
                   opacity: 0.5;
