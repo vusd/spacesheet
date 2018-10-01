@@ -9,3 +9,5 @@ import './assets/styles/styles.scss';
 import './assets/styles/video-player.scss';
 
 import './assets/js/index.js';
+
+require('./assets/media/favicon.png');
