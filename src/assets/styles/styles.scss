@@ -189,6 +189,14 @@ html, body
     padding: $spacingExtraLarge 0;
     text-align: center;
 
+    .columns:first-child
+    {
+      @media (min-width: 550px) {
+        margin-bottom: 0;
+      }
+      margin-bottom: $spacingLarge;
+    }
+
     h4
     {
       font-family: 'Rubik', sans-serif;
