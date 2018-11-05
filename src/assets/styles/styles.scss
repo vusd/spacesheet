@@ -157,6 +157,7 @@ html, body
             border: 2px solid $darkergrey;
           }
 
+          color: $darkgrey;
           cursor: pointer;
           border: 2px solid $darkgrey;
           display: flex;
@@ -173,7 +174,7 @@ html, body
             margin-bottom: $spacingSmall * 2;
           }
 
-          > h4
+          h4
           {
             margin: 0;
           }
