@@ -3,7 +3,7 @@ require('videojs-playlist');
 require('videojs-playlist-ui');
 
 // Import videos
-import '../media/videos/1-overview.mp4';
+// import '../media/videos/1-overview.mp4';
 import '../media/videos/2-workspace.mp4';
 import '../media/videos/3-interpolation.mp4';
 import '../media/videos/4-analogy.mp4';
@@ -19,21 +19,21 @@ const player = videojs(document.getElementById('player'), {
 });
 
 player.playlist([
-  {
-    sources: [{
-      src: './assets/media/1-overview.mp4',
-      type: 'video/mp4',
-    }],
-    poster: './assets/media/still.png',
-    name: 'Overview',
+  // {
+  //   sources: [{
+  //     src: './assets/media/1-overview.mp4',
+  //     type: 'video/mp4',
+  //   }],
+  //   poster: './assets/media/still.png',
+  //   name: 'Overview',
     // thumbnail: './assets/media/still.png',
-  },
+  // },
   {
     sources: [{
       src: './assets/media/2-workspace.mp4',
       type: 'video/mp4',
     }],
-    poster: '',
+    poster: './assets/media/still.png',
     name: 'Workspace',
   },
   {
