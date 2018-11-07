@@ -82,34 +82,50 @@ html, body
     {
       .columns
       {
-        &:first-child
-        {
-          button
-          {
-            float: left;
-          }
-        }
-        &:last-child
-        {
-          button
-          {
-            float: right;
-          }
-        }
+        // &:first-child
+        // {
+        //   button
+        //   {
+        //     float: left;
+        //   }
+        // }
+        // &:last-child
+        // {
+        //   button
+        //   {
+        //     float: right;
+        //   }
+        // }
+        // button
+        // {
+        //   font-family: 'Space Mono', monospace;
+        //   font-weight: normal;
+        //   font-size: 1.8rem;
+        //   width: 100%;
+        //   float: right;
+        //   margin-bottom: $spacingSmall;
+        //
+        //   @media (min-width: 550px)
+        //   {
+        //     margin-bottom: 0;
+        //     min-width: 220px;
+        //     width: 90%;
+        //   }
+        // }
+        text-align: center;
         button
         {
           font-family: 'Space Mono', monospace;
           font-weight: normal;
           font-size: 1.8rem;
           width: 100%;
-          float: right;
           margin-bottom: $spacingSmall;
+          max-width: 250px;
 
           @media (min-width: 550px)
           {
             margin-bottom: 0;
             min-width: 220px;
-            width: 90%;
           }
         }
       }
@@ -235,7 +251,7 @@ button
   {
     background: $darkgrey;
     color: $white;
-    border: 2px solid $darkgrey;
+    // border: 2px solid $darkgrey;
     &:hover
     {
       background: $darkergrey;
