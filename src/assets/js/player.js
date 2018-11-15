@@ -6,6 +6,7 @@ require('videojs-playlist-ui');
 import '../media/videos/1-workspace.mp4';
 import '../media/videos/2-attribute-vectors.mp4';
 import '../media/videos/interlaced-attribute-vectors.mp4';
+import '../media/videos/h264highprofile-attribute-vectors.mp4';
 import '../media/videos/3-interpolation.mp4';
 import '../media/videos/4-analogy.mp4';
 import '../media/videos/5-random-variables.mp4';
@@ -43,6 +44,14 @@ player.playlist([
     }],
     poster: './assets/media/still.png',
     name: 'Debug Attribute Vectors Video',
+  },
+  {
+    sources: [{
+      src: './assets/media/h264highprofile-attribute-vectors.mp4',
+      type: 'video/mp4',
+    }],
+    poster: './assets/media/still.png',
+    name: 'Debug H264 Attribute Vectors Video',
   },
   {
     sources: [{
