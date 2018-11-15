@@ -32,6 +32,7 @@ player.playlist([
       src: './assets/media/2-attribute-vectors.mp4',
       type: 'video/mp4',
     }],
+    poster: './assets/media/still.png',
     name: 'Attribute Vectors',
   },
   {
@@ -39,7 +40,7 @@ player.playlist([
       src: './assets/media/3-interpolation.mp4',
       type: 'video/mp4',
     }],
-    poster: '',
+    poster: './assets/media/still.png',
     name: 'Interpolation',
   },
   {
@@ -47,7 +48,7 @@ player.playlist([
       src: './assets/media/4-analogy.mp4',
       type: 'video/mp4',
     }],
-    poster: '',
+    poster: './assets/media/still.png',
     name: 'Analogy',
   },
   {
@@ -55,7 +56,7 @@ player.playlist([
       src: './assets/media/5-random-variables.mp4',
       type: 'video/mp4',
     }],
-    poster: '',
+    poster: './assets/media/still.png',
     name: 'Random Variables',
   },
   {
@@ -63,7 +64,7 @@ player.playlist([
       src: './assets/media/6-slider-cells.mp4',
       type: 'video/mp4',
     }],
-    poster: '',
+    poster: './assets/media/still.png',
     name: 'Slider Cells',
   },
   {
@@ -71,7 +72,7 @@ player.playlist([
       src: './assets/media/7-mod-cells.mp4',
       type: 'video/mp4',
     }],
-    poster: '',
+    poster: './assets/media/still.png',
     name: 'Mod Cells',
   },
 ]);
