@@ -253,10 +253,11 @@ button
   {
     background: $darkgrey;
     color: $white;
-    // border: 2px solid $darkgrey;
+    border: 2px solid $darkgrey;
     &:hover
     {
       background: $darkergrey;
+      border: 2px solid $darkergrey;
     }
   }
   &.btn-secondary
