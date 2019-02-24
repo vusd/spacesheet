@@ -166,5 +166,142 @@ User intuition and ability to derive meaning from latent spaces is fundamental i
 \bibliographystyle{iccc}
 \bibliography{iccc,spacesheet}
 
+\onecolumn
+
+\pagebreak
+
+\normalsize
+
+% \vspace*{0.15\textheight}
+
+\section*{Appendix: Implementation Details}
+
+\section*{Supported Operations}
+
+\renewcommand{\arraystretch}{1.5}
+
+\begin{center}
+    \begin{tabular}{ | l | p{6cm} | p{5.6cm} |}
+    \hline \textbf{Operation} & \textbf{Description} & \textbf{Formula} \\ \hline
+    Sum & Adds a list of numbers / variables  & \texttt{SUM(val1, val2, val3, ...)} \\ \hline
+    Minus & Subtracts two numbers / variables in sequence  & \texttt{MINUS(val1, val2)} \\ \hline
+    Multiply & Multiplies a list of numbers / variables  & \texttt{MUL(val1, val2, val3, ...)} \\ \hline
+    Linear Interpolation & Calculates the value in between two numbers / vectors at a specified amount  & \texttt{LERP(from, to, amount)} \\ \hline
+    Average & Calculates the average of a list of numbers / vectors  & \texttt{AVERAGE(val1, val2, val3, ...)} \\ \hline
+    Distance & Calculates the euclidean distance between two numbers / vectors  & \texttt{DIST(val1, val2)} \\ \hline
+    Modulate & Creates a scrubbing interface which can modulate a cell  & \texttt{MOD(cell, degree, radius)} \\ \hline
+    Random Variable & Creates a random latent variable  & \texttt{RANDVAR(seed)} \\ \hline
+    Slider & Creates a number which is controlled by a slider element  & \texttt{SLIDER(min, max[, step])} \\ \hline
+    \end{tabular}
+\end{center}
+
+
+\section*{Interactive Cell Types}
+
+\begin{figure}[ht!]
+  \centering
+  % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \includegraphics[width=12cm]{figs/03-cell-types.jpg}
+  \caption{RANDVAR, MOD and SLIDER cells.}
+\end{figure}
+
+Several alternative cell types have been implemented to create interface elements which support more effective search and exploration. These are instantiated by the operations:
+
+\begin{verbatim}
+RANDVAR(seed)
+\end{verbatim}
+The RANDVAR (random variable) cell instantiates a latent variable from a random seed. This enables users to operate using latent variables beyond the limited set afforded by the Data Picker. A button displays when the cell is hovered over which enables users to randomise the cell directly.
+
+\begin{verbatim}
+MOD(base, degree, distance)
+\end{verbatim}
+The MOD (modulate) cell exposes a joystick interface which enables users to scrub locally around a given latent variable to arrive at similar latent variables. The degree of difference can be controlled by the joystick’s distance from the center of the cell.
+
+\begin{verbatim}
+SLIDER(min, max [,step])
+\end{verbatim}
+The slider cell enables users to create a number controlled by a slider element.
+
+\newpage 
+\section*{Example Workflows}
+
+% turn off subsection numbering
+\setcounter{secnumdepth}{0}
+
+\subsection{Interpolation}
+\begin{figure}[ht!]
+  \centering
+  % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \includegraphics[width=9cm]{figs/04-interpolation-strip.jpg}
+  \caption{An interpolation between two latent variables}
+\end{figure}
+
+\subsection{Interpolation Strip - Slider Control}
+\begin{figure}[ht!]
+  \centering
+  % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \includegraphics[width=6cm]{figs/05-interpolation-by-slider.jpg}
+  \caption{An interpolation between two latent variables controlled using a slider cell}
+\end{figure}
+
+\subsection{Interpolation Grid - Four Corners}
+\begin{figure}[ht!]
+  \centering
+  % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \includegraphics[width=6cm]{figs/06-interpolation-grid.jpg}
+  \caption{An interpolation between four latent variables}
+\end{figure}
+
+\newpage 
+\subsection{Analogy}
+\begin{figure}[ht!]
+  \centering
+  % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \includegraphics[width=6cm]{figs/07-analogy.jpg}
+  \caption{An analogical construction. The bottom right cell applies the difference between the top cells to the cell on the bottom-left}
+\end{figure}
+
+Given three reconstructions (top-left, top-right, bottom-left), the SpaceSheet calculates the bottom-right corner by analogy. This is achieved by applying the difference between the top variables to the bottom-left variable. In this example, a toothy grin has been applied to the man.
+
+\subsection{Extrapolation}
+\begin{figure}[ht!]
+  \centering
+  % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \includegraphics[width=9cm]{figs/08-extrapolation.jpg}
+  \caption{Extrapolating from two points.}
+\end{figure}
+
+Extrapolating from latent variables can be used to emphasise attributes which vary between its anchors. In this example, the difference between the highlighted anchors - blond hair, large smile, etc.  - have been emphasised by extrapolating beyond the end anchor.
+
+\subsection{Averaging}
+\begin{figure}[ht!]
+  \centering
+  % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \includegraphics[width=5cm]{figs/10-averaging.jpg}
+  \caption{Calculating the average reconstruction of a group of latent variables}
+\end{figure}
+
+\newpage 
+\subsection{Attribute Vectors}
+\begin{figure}[ht!]
+  \centering
+  % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \includegraphics[width=12cm]{figs/09-attribute-vectors.jpg}
+  \caption{ Isolating a ‘blonde’ vector by subtraction (left). Adding the attribute vector to a new latent variable (right)}
+\end{figure}
+
+Specific attributes can be applied as operations to latent variables. Attribute vectors can be isolated by subtracting a latent vector with desired attributes with one without the attributes. This attribute vector can be added to another latent variable to apply the isolated attribute. The example image shows this two-step process. In the first, a ‘blonde’ attribute vector has been isolated by computing the difference between the highlighted cells. This vector is then applied in the right image by addition. The result is a more blonde version of the initial latent variable.
+
+\subsection{Random Neighbors}
+\begin{figure}[ht!]
+  \centering
+  % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \includegraphics[width=12cm]{figs/11-nearest-neighbours.jpg}
+  \caption{A random sampling around the selected cell}
+\end{figure}
+
+A random sampling of neighbouring variables can be created using the MOD operation. In the image, the selected cell formed the base from which MOD cells are created.
+
+
 
 \end{document}
