@@ -1,7 +1,8 @@
 # NOTES: brew cask install mactex first
 rm *.aux
-latex iccc
+latex spacesheet
 bibtex iccc
-latex iccc
-latex iccc
-pdflatex iccc
+bibtex spacesheet
+latex spacesheet
+latex spacesheet
+pdflatex spacesheet
