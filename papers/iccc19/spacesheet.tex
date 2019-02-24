@@ -53,7 +53,7 @@ We developed SpaceSheet (Figure 1) to leverage the familiarity and power of spre
 
 \subsection{Conceptual Spaces}
 
-Generative models are a popular approach to unsupervised machine learning. Generative neural network models are trained to produce data samples that resemble the training set ~\cite{openai1}. Because the number of model parameters is significantly smaller than the training data, the models are forced to discover efficient data representations. These models are sampled from a set of latent variables in a high dimensional space, called a latent space. Latent space can be sampled to generate observable data values. Learned latent representations often also allow semantic operations with vector space arithmetic (Figure 2), a phenomenon discovered previously in the latent space of language models~\cite{wordvec}.
+Generative models are a popular approach to unsupervised machine learning. Generative neural network models are trained to produce data samples that resemble the training set ~\cite{openai1}. Because the number of model parameters is significantly smaller than the training data, the models are forced to discover efficient data representations. These models are sampled from a set of latent variables in a high dimensional space, called a latent space. Latent space can be sampled to generate observable data values. Learned latent representations often also allow semantic operations with vector space arithmetic (Figure 2), a phenomenon discovered previously in the latent space of language models~\cite{word2vec}.
 
 \begin{figure}[ht]
   \centering
@@ -118,6 +118,50 @@ In addition to their promise in supporting design experimentation, spreadsheet s
 \section{SpaceSheet}
 
 SpaceSheet consists of a data picker exposing latent variables to operate with and a spreadsheet to define operations between the variables. In both, latent variables are decoded into observable images.
+
+\subsection{Data Picker}
+
+The data picker is a predetermined set of latent variables which have been organized into a grid. The set of variables in the data picker act as the points of reference from which the latent space can be explored from. Diversity has been prioritized in the selected set to maximize the variety of possible outcomes that can be explored. Multiple data pickers have also been implemented as tabs to provide various pre-baked distributions of latent variables.
+
+\subsection{Spreadsheet}
+
+The spreadsheet is the main workspace of the tool. It enables users to express relationships between cells using formulae. Operations between cells containing latent variables are computed with vector arithmetic, and its result is decoded into an image. Common operations can be defined by clicking on buttons at the top of the spreadsheet. These buttons are selection-aware, and highlight to suggest operations based on the selected cells. A live SpaceSheets demo is available online1 and the appendix contains a list of supported operations and sample workflows.
+
+\subsection{Applications}
+
+Initial efforts are focused on experimenting in various domains to encourage the development of a general-purpose model agnostic set of operations. A SpaceSheet to explore a generative model of fonts~\cite{bernhardsson15} has been implemented to be used as a design tool (Figure 5). User testing indicated that the tool enabled designers and non-designers alike to explore design variations easily~\cite{loh18}.
+
+\begin{figure}[ht]
+  \centering
+  % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \includegraphics[width=8cm]{figs/02A-use-cases.png}
+  \caption{SpaceSheet with Font Model}
+\end{figure}
+
+The concepts have also been extended to domains other than images and with models that are not generative, such as the Word2Vec model~\cite{word2vec}. This version of the SpaceSheet can be used to find word analogies and perform interpolations using nearest neighbors (Figure 6).
+
+\begin{figure}[ht]
+  \centering
+  % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \includegraphics[width=8cm]{figs/02B-use-cases.png}
+  \caption{SpaceSheet with word2vec}
+\end{figure}
+
+We are continuing to enhance the capabilities of the tool by extending the family of neural models that can be explored and supporting the various use cases that arise.
+
+\subsection{Evaluation}
+
+User testing of SpaceSheets on a model of fonts~\cite{loh18} revealed that the tool enabled a novel method to experiment with designs. Users explore design possibilities from a top-down approach by deriving meaning and navigating within a preconstructed model, rather than requiring a model to be constructed from the bottom-up.
+
+This method of working was reported to be more supportive of design exploration, more efficient, and capable of enabling non-designers to explore design possibilities. Unsurprisingly, it required new skills and intuition to be used to its full effect. A lack of knowledge in deriving and applying attribute vectors from latent space limited users’ expressivity and control over their experiments. Due to this, interpolation was found to be the most intuitive and common method to arrive at search targets.
+
+
+\subsection{Discussion}
+
+SpaceSheets explores the potential of latent spaces to be used as a tool for design experimentation. The research finds it to enable a novel method to work with designs which supports more efficient, high-level design experimentation to designers and non-designers alike. 
+
+User intuition and ability to derive meaning from latent spaces is fundamental in using the tool to conduct design experiments with a fine level of control. This intuition can be considered a skill, which can be developed through continued experience with the flexible, low-level interface provided by the SpaceSheet.
+
 
 \bibliographystyle{iccc}
 \bibliography{iccc,spacesheet}
