@@ -62,6 +62,62 @@ Generative models are a popular approach to unsupervised machine learning. Gener
   \caption{Schematic of the latent space of a generative model. In the general case, a generative model includes an encoder to map from the feature space (here images of faces) into a high dimensional latent space. Vector space arithmetic can be used in the latent space to perform semantic operations. The model also includes a decoder to map from the latent space back into the feature space, where the semantic operations can be observed. If the latent space transformation is the identity function we refer to the encoding and decoding as a reconstruction of the input through the model. }
 \end{figure}
 
+Generative models are often applied to datasets of images. Two popular generative models for image data are the Variational Autoencoder~\cite{kingma13} (VAE) and the Generative Adversarial Network~\cite{goodfellow14} (GAN). VAEs use the framework of probabilistic graphical models with an objective of maximizing a lower bound on the likelihood of the data. GANs instead formalize the training process as a competition between a generative network and a separate discriminative network. Though these two frameworks are very different, both construct high dimensional latent spaces that can be sampled to generate images resembling training set data. Moreover, these latent spaces are generally highly structured and can enable complex operations on the generated images by simple vector space arithmetic in the latent space~\cite{larsen15}.
+
+In the latent space of generative models, many high level attributes can be represented as a vector (Figure 3). Using techniques from ~\cite{white16}, multiple attributes can be decoupled further to create a visualization of possible states across multiple semantic vectors (Figure 4). For example, when trained on a dataset of portraits, latent vectors can be computed for "smiling" and "mouth open" which then applied to new face images.
+
+\begin{figure}[ht]
+  \centering
+  % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \includegraphics[width=8cm]{figs/smilevector.png}
+  \caption{Traversals along the smile vector using a GAN model from ~\cite{dumoulin16}}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \includegraphics[width=8cm]{figs/decoupled.jpg}
+  \caption{Decoupling attribute vectors for smiling (x-axis) and mouth open (y-axis) allows for more flexible latent space transformations. Input shown at left with reconstruction adjacent. Using a VAE model from ~\cite{lamb16}}
+\end{figure}
+
+Prior to the discovery of neural network latent spaces supporting semantic operations, cognitive science had hypothesized the existence of knowledge representations that were primarily geometric instead of symbolic. One primary proponent was G{\"{a}}rdenfors who proposed a framework of "Conceptual Spaces" as structured multi-dimensional feature spaces to support modeling information processes such as concept learning and prototype theory~\cite{gardenfors11}. Notably, conceptual spaces were proposed as a model of how people structure concepts, independent of any proposed computational implementation of how they might come about.
+
+We adapt the terminology and claim that latent spaces of generative neural networks function as conceptual spaces which can be used as non-symbolic knowledge representation layers in other tools. With this framework, we examine the ability of this representation layer built from the latent space of a generative neural network model to support a new type of spreadsheet interface tool. The tool itself is domain independent and is shown to be useful in several domains. In exploring these particular domains, our tool constructs subspaces of the larger conceptual space of possibilities as a parameter space of a spreadsheet driven exploration tool.
+
+\subsection{Supporting Design Experimentation}
+
+Design principles have been identified by ~\cite{resnick05} and ~\cite{terry02}
+for user interfaces to support design experimentation and exploration.
+
+These principles can be summarised by the three user interface requirements proposed in Design Principles for Tools to Support Creative Thinking~\cite{resnick05}  (paraphrased):
+It must be very easy to try things out and then backtrack when unsuccessful.
+Tools should be ‘self-revealing’ in what they can achieve.
+Make it very fast to sketch out different alternatives
+
+These principles are supported by ~\cite{terry02} where they identify three activities in the process of reflection-in-action~\cite{schon84} that should be supported by user interfaces for design experimentation. They are: Near-Term Experimentation, Generating Variations, and Evaluation.
+
+Near-Term Experimentation is used to describe actions which intend to ``discover and instantiate the next move'' ~\cite[p. 39]{terry02}. In a user interface, users would make hypotheses about the next action to be made, and test their hypothesis by ``invoking a command and adjusting its settings to achieve the imagined effect''. The users would then ``either accept the command, tweak the parameters more, or undo it and try another tact'' ~\cite[p. 40]{terry02}.
+
+Variations are created by the designer to explore alternatives deeply. It enables them ``to better understand the problem, its boundaries, and potential solutions'' ~\cite[p. 40]{terry02}. An example of this is where designers make ``multiple variations of a specific component by creating them side-by-side on a large canvas ... and iterate on promising versions to arrive at an acceptable solution'' ~\cite[p. 40]{terry02}.
+
+Users need to evaluate their progress as they work on a task. This happens after near-term experiments, as well as after generating variations: ``the moment in which the individual reassesses the problem and their understanding of it, before making the next move'' ~\cite[p. 40]{terry02}.
+
+\subsection{Spreadsheet as a Design tool}
+
+Spreadsheets may seem like an unlikely design tool. However, the ability to express relationships between cells make it functionally suited to express operations in latent space. 
+Additionally, it satisfies the three user requirements for software to support design experimentation — Near-Term Experimentation, Generating Variations, and Evaluation as proposed by ~\cite{terry02}.
+
+Near-term experimentation is supported by the automatic updating feature of the spreadsheet. Users are able to set up scenarios of logic and calculate the results to ‘what if’ questions instantly by modifying the cell values. This establishes a tight feedback loop between the user’s actions and its implications. When coupled with the ability to undo actions, it enables users to discover and instantiate moves, and backtrack if the results are unsatisfactory.
+
+The generation of variations is supported by enabling users to duplicate instances of data onto other cells within the document. These copies can then be modified independently from the original data.
+
+Evaluation is supported by enabling users flexibility in how they choose to organise data in the document. Users can set up custom templates in a layout which best supports their preferences and the problem to be solved.
+
+In addition to their promise in supporting design experimentation, spreadsheet software is well-established within office productivity suites. Users with an understanding of how conventional spreadsheets function are able to transfer their understanding to the use of the design tool.
+
+\section{SpaceSheet}
+
+SpaceSheet consists of a data picker exposing latent variables to operate with and a spreadsheet to define operations between the variables. In both, latent variables are decoded into observable images.
 
 \bibliographystyle{iccc}
 \bibliography{iccc,spacesheet}
