@@ -18,9 +18,9 @@
 %
 \title{SpaceSheet: Navigating Conceptual Space with a Spreadsheet Interface}
 \author{
-  Anonymous Author(s)\\
-  Anonymous School(s)\\
-  \texttt{\{Anonymous Email(s)\}} \\
+  Tom White and Bryan Loh\\
+  School of Design\\University of Wellington\\Wellington, New Zealand \\
+  \texttt{\{tom.white@vuw.ac.nz, lohbrya@myvuw.ac.nz\}} \\
 }
 \setcounter{secnumdepth}{0}
 
@@ -38,7 +38,7 @@ Problem solving can be viewed as a search for a solution within a space. In desi
 
 Generative models learn more compact representations of the training data in a vector space of latent variables. Latent variables are sampled from high-dimensional latent space and can be decoded back into observable values. Additionally, semantic operations can be performed within latent space using vector arithmetic~\cite{white16}.
 
-Spreadsheet interfaces are a ubiquitous part of office productivity suites. They enable users to perform experimental calculations using a set of formulae which define relationships spatially. Automatic recalculation supports experimentation by enabling users to observe the results of their actions immediately and act accordingly
+Spreadsheet interfaces are a ubiquitous part of office productivity suites. They enable users to perform experimental calculations using a set of formulae which define relationships spatially. Automatic recalculation supports experimentation by enabling users to observe the results of their actions immediately and act accordingly.
 
 \begin{figure}[ht]
   \centering
@@ -47,24 +47,24 @@ Spreadsheet interfaces are a ubiquitous part of office productivity suites. They
   \caption{The SpaceSheet being used to perform an average between two latent variables}
 \end{figure}
 
-We developed SpaceSheet (Figure 1) to leverage the familiarity and power of spreadsheet interfaces for the purpose of design experimentation within latent space. It has been adapted to enable non- experts to explore and experiment within latent spaces.
+We developed SpaceSheet (Figure 1) to leverage the familiarity and power of spreadsheet interfaces for the purpose of design experimentation within latent space. It has been adapted to enable non-experts to explore and experiment within latent spaces.
 
 \section{Background}
 
 \subsection{Conceptual Spaces}
 
-Generative models are a popular approach to unsupervised machine learning. Generative neural network models are trained to produce data samples that resemble the training set ~\cite{openai1}. Because the number of model parameters is significantly smaller than the training data, the models are forced to discover efficient data representations. These models are sampled from a set of latent variables in a high dimensional space, called a latent space. Latent space can be sampled to generate observable data values. Learned latent representations often also allow semantic operations with vector space arithmetic (Figure 2), a phenomenon discovered previously in the latent space of language models~\cite{word2vec}.
+Generative models are a popular approach to unsupervised machine learning. Generative neural network models are trained to produce data samples that resemble the training set ~\cite{openai1}. Because the number of model parameters is significantly smaller than the training data, the models are forced to discover efficient data representations. These models are sampled from a set of latent variables in a high-dimensional space, called a latent space. Latent space can be sampled to generate observable data values. Learned latent representations often also allow semantic operations with vector space arithmetic (Figure 2), a phenomenon discovered previously in the latent space of language models~\cite{word2vec}.
 
 \begin{figure}[ht]
   \centering
   % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
   \includegraphics[width=8cm]{figs/face_space.png}
-  \caption{Schematic of the latent space of a generative model. In the general case, a generative model includes an encoder to map from the feature space (here images of faces) into a high dimensional latent space. Vector space arithmetic can be used in the latent space to perform semantic operations. The model also includes a decoder to map from the latent space back into the feature space, where the semantic operations can be observed. If the latent space transformation is the identity function we refer to the encoding and decoding as a reconstruction of the input through the model. }
+  \caption{Schematic of the latent space of a generative model. In the general case, a generative model includes an encoder to map from the feature space (here images of faces) into a high-dimensional latent space. Vector space arithmetic can be used in the latent space to perform semantic operations. The model also includes a decoder to map from the latent space back into the feature space, where the semantic operations can be observed. If the latent space transformation is the identity function we refer to the encoding and decoding as a reconstruction of the input through the model. }
 \end{figure}
 
-Generative models are often applied to datasets of images. Two popular generative models for image data are the Variational Autoencoder~\cite{kingma13} (VAE) and the Generative Adversarial Network~\cite{goodfellow14} (GAN). VAEs use the framework of probabilistic graphical models with an objective of maximizing a lower bound on the likelihood of the data. GANs instead formalize the training process as a competition between a generative network and a separate discriminative network. Though these two frameworks are very different, both construct high dimensional latent spaces that can be sampled to generate images resembling training set data. Moreover, these latent spaces are generally highly structured and can enable complex operations on the generated images by simple vector space arithmetic in the latent space~\cite{larsen15}.
+Generative models are often applied to datasets of images. Two popular generative models for image data are the Variational Autoencoder~\cite{kingma13} (VAE) and the Generative Adversarial Network~\cite{goodfellow14} (GAN). VAEs use the framework of probabilistic graphical models with an objective of maximizing a lower bound on the likelihood of the data. GANs instead formalize the training process as a competition between a generative network and a separate discriminative network. Though these two frameworks are very different, both construct high-dimensional latent spaces that can be sampled to generate images resembling training set data. Moreover, these latent spaces are generally highly structured and can enable complex operations on the generated images by simple vector space arithmetic in the latent space~\cite{larsen15}.
 
-In the latent space of generative models, many high level attributes can be represented as a vector (Figure 3). Using techniques from ~\cite{white16}, multiple attributes can be decoupled further to create a visualization of possible states across multiple semantic vectors (Figure 4). For example, when trained on a dataset of portraits, latent vectors can be computed for "smiling" and "mouth open" which then applied to new face images.
+In the latent space of generative models, many high-level attributes can be represented as a vector (Figure 3). Using techniques from ~\cite{white16}, multiple attributes can be decoupled further to create a visualization of possible states across multiple semantic vectors (Figure 4). For example, when trained on a dataset of portraits, latent vectors can be computed for "smiling" and "mouth open" which then applied to new face images.
 
 \begin{figure}[ht]
   \centering
@@ -125,7 +125,7 @@ The data picker is a predetermined set of latent variables which have been organ
 
 \subsection{Spreadsheet}
 
-The spreadsheet is the main workspace of the tool. It enables users to express relationships between cells using formulae. Operations between cells containing latent variables are computed with vector arithmetic, and its result is decoded into an image. Common operations can be defined by clicking on buttons at the top of the spreadsheet. These buttons are selection-aware, and highlight to suggest operations based on the selected cells. A live SpaceSheets demo is available online1 and the appendix contains a list of supported operations and sample workflows.
+The spreadsheet is the main workspace of the tool. It enables users to express relationships between cells using formulae. Operations between cells containing latent variables are computed with vector arithmetic, and its result is decoded into an image. Common operations can be defined by clicking on buttons at the top of the spreadsheet. These buttons are selection-aware, and highlight to suggest operations based on the selected cells. A live SpaceSheets demo is available online\footnote{https://vusd.github.io/spacesheet/} and the appendix contains a list of supported operations and sample workflows.
 
 \subsection{Applications}
 
