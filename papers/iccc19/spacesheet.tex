@@ -28,7 +28,7 @@
 \maketitle
 \begin{abstract}
 \begin{quote}
-We introduce a new spreadsheet based interface call SpaceSheets for creating novel images and other media. Unlike traditional digital tools, ours is parameterized entirely by a neural network with no preprogrammed rules or knowledge representations. The capability of SpaceSheets to support visual exploration and communication is demonstrated within the context of several domains including facial images, fonts, and english words. SpaceSheets is demonstrated to support the experimentation and exploration of latent spaces enabling more effective design experimentation.
+We introduce a new spreadsheet based interface called SpaceSheets for creating novel images and other media. Unlike traditional digital tools, ours is parameterized entirely by a neural network with no preprogrammed rules or knowledge representations. The capability of SpaceSheets to support visual exploration and communication is demonstrated within the context of several domains including facial images, fonts, and english words. SpaceSheets is demonstrated to support the experimentation and exploration of latent spaces enabling more effective design experimentation.
 \end{quote}
 \end{abstract}
 
@@ -129,25 +129,43 @@ The spreadsheet is the main workspace of the tool. It enables users to express r
 
 \subsection{Applications}
 
+\begin{figure}[ht]
+  \centering
+  % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \includegraphics[width=6cm]{figs/02A-use-cases.png}
+  \caption{SpaceSheet with Font Model}
+\end{figure}
+
+
 Initial efforts are focused on experimenting in various domains to encourage the development of a general-purpose model agnostic set of operations. A SpaceSheet to explore a generative model of fonts~\cite{bernhardsson15} has been implemented to be used as a design tool (Figure 5). User testing indicated that the tool enabled designers and non-designers alike to explore design variations easily~\cite{loh18}.
 
 \begin{figure}[ht]
   \centering
   % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
-  \includegraphics[width=8cm]{figs/02A-use-cases.png}
-  \caption{SpaceSheet with Font Model}
+  \includegraphics[width=5cm]{figs/02B-use-cases.png}
+  \caption{SpaceSheet with word2vec}
 \end{figure}
 
+
 The concepts have also been extended to domains other than images and with models that are not generative, such as the Word2Vec model~\cite{word2vec}. This version of the SpaceSheet can be used to find word analogies and perform interpolations using nearest neighbors (Figure 6).
+
+A SpaceSheet has been created to enable the exploration of the BigGAN model. In this implementation, the primary DataPicker for this implementation has been curated to enable users to experiment with a variety of image classes (Figure 8).
 
 \begin{figure}[ht]
   \centering
   % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
-  \includegraphics[width=8cm]{figs/02B-use-cases.png}
-  \caption{SpaceSheet with word2vec}
+  \includegraphics[width=8cm]{figs/BigGAN-01.png}
+  \caption{BigGAN SpaceSheet with a generic DataPicker across all image classes}
 \end{figure}
 
-We are continuing to enhance the capabilities of the tool by extending the family of neural models that can be explored and supporting the various use cases that arise.
+Custom DataPickers of other classes, or combinations of other classes can be created using the DataPicker creator (accessible through the highlighted button in Figure A). The DataPicker creator enables users to a) explore and select one or more classes from a searchable, hierarchically organised tree checklist, b) control the amounts of each class to composite in the resulting class, and c) preview example reconstructions of the resulting class before creating a DataPicker of the resulting class. Once created, this new custom DataPicker will be available for use in the spreadsheet (Figure 9).
+
+\begin{figure}[ht]
+  \centering
+  % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \includegraphics[width=8cm]{figs/BigGAN-03.png}
+  \caption{BigGAN SpaceSheet with a custom DataPicker made from combining a user-provided ratio of the "Bubble", "Granny Smith", and "Velvet" image classes}
+\end{figure}
 
 \subsection{Evaluation}
 
