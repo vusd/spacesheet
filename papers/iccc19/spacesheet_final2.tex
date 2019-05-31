@@ -19,7 +19,7 @@
 \title{SpaceSheet: Navigating Conceptual Space with a Spreadsheet Interface}
 \author{
   Tom White and Bryan Loh\\
-  School of Design\\University of Wellington\\Wellington, New Zealand \\
+  School of Design\\Victoria University of Wellington\\Wellington, New Zealand \\
   \texttt{\{tom.white@vuw.ac.nz, lohbrya@myvuw.ac.nz\}} \\
 }
 \setcounter{secnumdepth}{0}
@@ -142,7 +142,7 @@ Initial efforts are focused on experimenting in various domains to encourage the
 \begin{figure}[ht]
   \centering
   % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
-  \includegraphics[width=5cm]{figs/02B-use-cases.png}
+  \includegraphics[width=5cm]{figs/02C-use-cases.png}
   \caption{SpaceSheet with word2vec}
 \end{figure}
 
@@ -259,42 +259,15 @@ The slider cell enables users to create a number controlled by a slider element.
 \begin{figure}[ht!]
   \centering
   % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
-  \includegraphics[width=7.5cm]{figs/04-interpolation-strip.jpg}
+  \includegraphics[width=11.0cm]{figs/04-interpolation-strip.jpg}
   \caption{An interpolation between two latent variables}
 \end{figure}
-
-\subsection{Interpolation Strip - Slider Control}
-\begin{figure}[ht!]
-  \centering
-  % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
-  \includegraphics[width=6cm]{figs/05-interpolation-by-slider.jpg}
-  \caption{An interpolation between two latent variables controlled using a slider cell}
-\end{figure}
-
-\subsection{Interpolation Grid - Four Corners}
-\begin{figure}[ht!]
-  \centering
-  % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
-  \includegraphics[width=7.5cm]{figs/06-interpolation-grid.jpg}
-  \caption{An interpolation between four latent variables}
-\end{figure}
-
-\newpage 
-\subsection{Analogy}
-\begin{figure}[ht!]
-  \centering
-  % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
-  \includegraphics[width=5.5cm]{figs/07-analogy.jpg}
-  \caption{An analogical construction. The bottom right cell applies the difference between the top cells to the cell on the bottom-left}
-\end{figure}
-
-Given three reconstructions (top-left, top-right, bottom-left), the SpaceSheet calculates the bottom-right corner by analogy. This is achieved by applying the difference between the top variables to the bottom-left variable. In this example, a toothy grin has been applied to the man.
 
 \subsection{Extrapolation}
 \begin{figure}[ht!]
   \centering
   % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
-  \includegraphics[width=8cm]{figs/08-extrapolation.jpg}
+  \includegraphics[width=11.0cm]{figs/08-extrapolation.jpg}
   \caption{Extrapolating from two points.}
 \end{figure}
 
@@ -304,31 +277,32 @@ Extrapolating from latent variables can be used to emphasise attributes which va
 \begin{figure}[ht!]
   \centering
   % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
-  \includegraphics[width=5.5cm]{figs/10-averaging.jpg}
+  \includegraphics[width=7.5cm]{figs/10-averaging.jpg}
   \caption{Calculating the average reconstruction of a group of latent variables}
 \end{figure}
 
 \newpage 
+\subsection{Analogy}
+\begin{figure}[ht!]
+  \centering
+  % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \includegraphics[width=7.0cm]{figs/07-analogy.jpg}
+  \caption{An analogical construction. The bottom right cell applies the difference between the top cells to the cell on the bottom-left}
+\end{figure}
+
+Given three reconstructions (top-left, top-right, bottom-left), the SpaceSheet calculates the bottom-right corner by analogy. This is achieved by applying the difference between the top variables to the bottom-left variable. In this example, a toothy grin has been applied to the man.
+
+
+
 \subsection{Attribute Vectors}
 \begin{figure}[ht!]
   \centering
   % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
-  \includegraphics[width=12cm]{figs/09-attribute-vectors.jpg}
+  \includegraphics[width=14cm]{figs/09-attribute-vectors.jpg}
   \caption{ Isolating a ‘blonde’ vector by subtraction (left). Adding the attribute vector to a new latent variable (right)}
 \end{figure}
 
 Specific attributes can be applied as operations to latent variables. Attribute vectors can be isolated by subtracting a latent vector with desired attributes with one without the attributes. This attribute vector can be added to another latent variable to apply the isolated attribute. The example image shows this two-step process. In the first, a ‘blonde’ attribute vector has been isolated by computing the difference between the highlighted cells. This vector is then applied in the right image by addition. The result is a more blonde version of the initial latent variable.
-
-\subsection{Random Neighbors}
-\begin{figure}[ht!]
-  \centering
-  % \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
-  \includegraphics[width=12cm]{figs/11-nearest-neighbours.jpg}
-  \caption{A random sampling around the selected cell}
-\end{figure}
-
-A random sampling of neighbouring variables can be created using the MOD operation. In the image, the selected cell formed the base from which MOD cells are created.
-
 
 
 \end{document}
