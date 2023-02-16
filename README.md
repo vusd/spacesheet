@@ -1,7 +1,10 @@
-### SpaceSheets: Interactive Latent Space Exploration through a Spreadsheet Interface
+### Landing page for SpaceSheets: Interactive Latent Space Exploration through a Spreadsheet Interface
 
-Visit the landing page for videos, papers and links to a live demo:
+Visit the hosted site here:
 https://vusd.github.io/spacesheet/
+
+Access the source code for SpaceSheets here:
+https://github.com/bryanlohjy/spacesheet
 
 ---
 Papers:
